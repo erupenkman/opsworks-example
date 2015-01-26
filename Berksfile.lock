@@ -1,0 +1,7 @@
+DEPENDENCIES
+  berks-fuck-you
+    path: .
+    metadata: true
+
+GRAPH
+  berks-fuck-you (0.1.0)
