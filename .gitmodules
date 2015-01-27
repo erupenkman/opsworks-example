@@ -1,0 +1,4 @@
+[submodule "opsworks/cookbooks"]
+	path = opsworks/cookbooks
+	url = https://github.com/aws/opsworks-cookbooks.git
+	branch = release-chef-11.10
