@@ -3,6 +3,12 @@ source "https://supermarket.getchef.com"
 metadata
 
 cookbook "deploy", path: 'opsworks/cookbooks/deploy'
+cookbook "apache2", path: 'opsworks/cookbooks/apache2'
+
+cookbook "ruby", path: 'opsworks/cookbooks/ruby'
+cookbook "opsworks_rubygems", path: 'opsworks/cookbooks/opsworks_rubygems'
+cookbook "opsworks_bundler", path: 'opsworks/cookbooks/opsworks_bundler'
+
 cookbook "opsworks_commons", path: 'opsworks/cookbooks/opsworks_commons'
 cookbook "scm_helper", path: 'opsworks/cookbooks/scm_helper'
 cookbook "mod_php5_apache2", path: 'opsworks/cookbooks/mod_php5_apache2'

@@ -1,4 +1,6 @@
 DEPENDENCIES
+  apache2
+    path: opsworks/cookbooks/apache2
   berks-fuck-you
     path: .
     metadata: true
@@ -16,6 +18,8 @@ DEPENDENCIES
     path: opsworks/cookbooks/opsworks_agent_monit
   opsworks_aws_flow_ruby
     path: opsworks/cookbooks/opsworks_aws_flow_ruby
+  opsworks_bundler
+    path: opsworks/cookbooks/opsworks_bundler
   opsworks_commons
     path: opsworks/cookbooks/opsworks_commons
   opsworks_ganglia
@@ -26,17 +30,17 @@ DEPENDENCIES
     path: opsworks/cookbooks/opsworks_java
   opsworks_nodejs
     path: opsworks/cookbooks/opsworks_nodejs
+  opsworks_rubygems
+    path: opsworks/cookbooks/opsworks_rubygems
+  ruby
+    path: opsworks/cookbooks/ruby
   scm_helper
     path: opsworks/cookbooks/scm_helper
   ssh_users
     path: opsworks/cookbooks/ssh_users
 
 GRAPH
-  apache2 (1.11.0)
-    freebsd (>= 0.0.0)
-    iptables (>= 0.0.0)
-    logrotate (>= 0.0.0)
-    pacman (>= 0.0.0)
+  apache2 (1.0.0)
   apt (2.6.1)
   berks-fuck-you (0.1.0)
   bluepill (2.3.1)
@@ -86,6 +90,7 @@ GRAPH
   opsworks_agent_monit (1.0.0)
     opsworks_initial_setup (>= 0.0.0)
   opsworks_aws_flow_ruby (1.0.0)
+  opsworks_bundler (1.0.0)
   opsworks_commons (1.0.0)
     dependencies (>= 0.0.0)
   opsworks_ganglia (1.0.0)
@@ -99,6 +104,8 @@ GRAPH
   opsworks_nodejs (1.0.0)
     deploy (>= 0.0.0)
     opsworks_commons (>= 0.0.0)
+  opsworks_rubygems (1.0.0)
+    opsworks_initial_setup (>= 0.0.0)
   packages (0.4.0)
   pacman (1.1.1)
   passenger_apache2 (2.2.3)
@@ -112,7 +119,11 @@ GRAPH
     xml (>= 0.0.0)
     yum-epel (>= 0.0.0)
   rsyslog (1.13.0)
-  ruby (0.9.3)
+  ruby (1.0.0)
+    opsworks_bundler (>= 0.0.0)
+    opsworks_commons (>= 0.0.0)
+    opsworks_initial_setup (>= 0.0.0)
+    opsworks_rubygems (>= 0.0.0)
   runit (1.5.14)
     build-essential (>= 0.0.0)
     yum (~> 3.0)

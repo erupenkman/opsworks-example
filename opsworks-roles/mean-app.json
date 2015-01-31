@@ -2,13 +2,15 @@
   "name": "mean-app",
   "description": "OpsWorks recipe run-list for the app layer",
   "default_attributes": {
+  	
   },
   "run_list": [
+    "recipe[dependencies]",
     "recipe[opsworks_initial_setup]",
     "recipe[mysql::client]",
-    "recipe[dependencies]",
     "recipe[opsworks_ganglia::client]",
-    "recipe[opsworks_ganglia::configure-client]"
+    "recipe[opsworks_ganglia::configure-client]",
+    "recipe[berks-fuck-you]"
   ],
   "chef_type": "role",
   "json_class": "Chef::Role"

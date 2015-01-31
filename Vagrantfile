@@ -17,7 +17,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Every Vagrant virtual environment requires a box to build off of.
   # If this value is a shorthand to a box in Vagrant Cloud then
   # config.vm.box_url doesn't need to be specified.
-  config.vm.box = 'chef/ubuntu-14.04'
+  config.vm.box = 'ubuntu1204-opsworks';
 
 
   # Assign this VM to a host-only network IP, allowing you to access it
@@ -66,17 +66,34 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # to skip installing and copying to Vagrant's shelf.
   # config.berkshelf.except = []
 
+  config.vm.provision "shell", inline: "apt-get update > /dev/null"
+
   config.vm.provision :chef_solo do |chef|
+    chef.roles_path = "opsworks-roles"
+
+    chef.add_role "mean-app"
+
     chef.json = {
-      mysql: {
-        server_root_password: 'rootpass',
-        server_debian_password: 'debpass',
-        server_repl_password: 'replpass'
+     :opsworks => {
+        :ruby_stack => "ruby",
+        :stack => {
+          :name => "TestStack",
+          "rds_instances"=> {}
+        },
+        :layers => {
+          "mean-app" => {
+            "instances" => {
+              "php-app1" => {
+                "private-ip" => "10.10.10.10",
+                "infrastructure_class" => "ec2"
+              }
+            }
+          }
+        },
+        :instance => {
+          "infrastructure_class" => "ec2"
+        }
       }
     }
-
-    chef.run_list = [
-      'recipe[berks-fuck-you::default]'
-    ]
   end
 end
