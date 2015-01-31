@@ -72,7 +72,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     chef.roles_path = "opsworks-roles"
 
     chef.add_role "mean-app"
-
     chef.json = {
      :opsworks => {
         :ruby_stack => "ruby",

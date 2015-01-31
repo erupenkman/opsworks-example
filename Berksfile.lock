@@ -118,7 +118,7 @@ GRAPH
     windows (>= 0.0.0)
     xml (>= 0.0.0)
     yum-epel (>= 0.0.0)
-  rsyslog (1.13.0)
+  rsyslog (1.14.0)
   ruby (1.0.0)
     opsworks_bundler (>= 0.0.0)
     opsworks_commons (>= 0.0.0)
