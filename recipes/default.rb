@@ -8,5 +8,5 @@
 #
 
 file '/bin/motd' do
-  content 'sick this is working'
+  content 'snow I have a local test envrionment, cool!'
 end
