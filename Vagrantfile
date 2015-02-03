@@ -11,7 +11,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # options are documented and commented below. For a complete reference,
   # please see the online documentation at vagrantup.com.
 
-  config.vm.hostname = 'berks-fuck-you-berkshelf'
+  config.vm.hostname = 'opsworks-example-project-berkshelf'
 
 
   # Every Vagrant virtual environment requires a box to build off of.
@@ -71,7 +71,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provision :chef_solo do |chef|
     chef.roles_path = "opsworks-roles"
 
-    chef.add_role "mean-app"
+    chef.add_role "example-layer"
     chef.json = {
      :opsworks => {
         :ruby_stack => "ruby",
@@ -80,7 +80,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
           "rds_instances"=> {}
         },
         :layers => {
-          "mean-app" => {
+          "example-layer" => {
             "instances" => {
               "php-app1" => {
                 "private-ip" => "10.10.10.10",

@@ -1,42 +1,45 @@
-# berks-fuck-you-cookbook
+#Set up a vagrant VM that mimics amazon opsworks. Test your chef recipies before deploying them
 
-TODO: Enter the cookbook description here.
+So you want to use chef to provision opsworks like a boss? well first you'll need to test them locally. This project is an example that provisions a Vagrant VM with the default opsworks recipes and a starting point to build your own.
 
-## Supported Platforms
+#installation
+install Vagrant, Virtualbox, Vagrant-Berkshelf plugin. after installing I got
 
-TODO: List your supported platforms.
+    
+    Vagrant -v
+    Vagrant 1.7.2
+    
+    Vagrant plugin list
+    vagrant-berkshelf (4.0.2)
+    vagrant-share (1.1.3, system)
+    
+    ruby -v
+    ruby 2.0.0p481 (2014-05-08 revision 45883) [universal.x86_64-darwin14]
 
-## Attributes
+This depends on the box file from this project https://github.com/wwestenbrink/vagrant-opsworks
+clone vagrant-opsworks seprately, it's dependencies and build the box file, I used commit `da9f341197`
 
-<table>
-  <tr>
-    <th>Key</th>
-    <th>Type</th>
-    <th>Description</th>
-    <th>Default</th>
-  </tr>
-  <tr>
-    <td><tt>['berks-fuck-you']['bacon']</tt></td>
-    <td>Boolean</td>
-    <td>whether to include bacon</td>
-    <td><tt>true</tt></td>
-  </tr>
-</table>
+once finished you shouuld get this:
 
-## Usage
+    vagrant box list
 
-### berks-fuck-you::default
+    ubuntu1204-opsworks (virtualbox, 0)
 
-Include `berks-fuck-you` in your node's `run_list`:
+# Running
+if all went well, run
 
-```json
-{
-  "run_list": [
-    "recipe[berks-fuck-you::default]"
-  ]
-}
-```
+    vagrant up --provision
 
-## License and Authors
+    vagrant ssh
 
-Author:: YOUR_NAME (<YOUR_EMAIL>)
+    cat /home/example-file
+
+If everything succeeded, default.rb created that file! Log in to opsworks, make sure it runs there too. Test your own recipes. Happy devop-ing!
+
+# Recomended reading 
+I mostly followed these blog posts to get this far.
+
+http://pixelcog.com/blog/2014/virtualizing-aws-opsworks-with-vagrant/
+http://dev.inventit.io/blog/aws/opsworks/vagrant/chef/berkshelf/2014/04/28/opsworks_vagrant_chef_berkshelf_tips.html
+http://joshsymonds.com/blog/2014/06/11/getting-started-with-aws-opsworks/
+  

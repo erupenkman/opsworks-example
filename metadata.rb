@@ -1,7 +1,8 @@
-name             'berks-fuck-you'
+name             'opsworks-example-project'
 maintainer       'YOUR_NAME'
 maintainer_email 'YOUR_EMAIL'
 license          'All rights reserved'
-description      'Installs/Configures berks-fuck-you'
-long_description 'Installs/Configures berks-fuck-you'
-version          '0.1.0'
+description      'Installs/Configures opsworks-example-project'
+long_description 'Installs/Configures opsworks-example-project'
+version          '1.0.0'
+

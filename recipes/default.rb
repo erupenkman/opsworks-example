@@ -1,12 +1,9 @@
 #
-# Cookbook Name:: berks-fuck-you
+# Cookbook Name:: opsworks-example-project
 # Recipe:: default
-#
-# Copyright (C) 2015 YOUR_NAME
-#
-# All rights reserved - Do Not Redistribute
+# Free and open source
 #
 
-file '/bin/motd' do
-  content 'snow I have a local test envrionment, cool!'
+file '/home/example-file' do
+  content 'if you\'re reading this, something went horribly right!\n\n'
 end

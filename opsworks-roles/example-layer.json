@@ -1,5 +1,5 @@
 {
-  "name": "mean-app",
+  "name": "example-layer",
   "description": "OpsWorks recipe run-list for the app layer",
   "default_attributes": {
   	
@@ -10,7 +10,7 @@
     "recipe[mysql::client]",
     "recipe[opsworks_ganglia::client]",
     "recipe[opsworks_ganglia::configure-client]",
-    "recipe[berks-fuck-you]"
+    "recipe[opsworks-example-project]"
   ],
   "chef_type": "role",
   "json_class": "Chef::Role"
