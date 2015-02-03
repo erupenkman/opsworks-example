@@ -1,6 +1,6 @@
-#Set up a vagrant VM that mimics amazon opsworks. Test your chef recipies before deploying them
+#Test your chef recipies before deploying them to opsworks
 
-So you want to use chef to provision opsworks like a boss? well first you'll need to test them locally. This project is an example that provisions a Vagrant VM with the default opsworks recipes and a starting point to build your own.
+So you want to use chef to provision aws opsworks like a boss? well first you'll need to test them locally. This project is an example that provisions a Vagrant VM with the default opsworks recipes and a starting point to build your own.
 
 #installation
 install Vagrant, Virtualbox, Vagrant-Berkshelf plugin. after installing I got
@@ -36,7 +36,7 @@ if all went well, run
 
 If everything succeeded, default.rb created that file! Log in to opsworks, make sure it runs there too. Test your own recipes. Happy devop-ing!
 
-# Recomended reading 
+# Recommended reading 
 I mostly followed these blog posts to get this far.
 
 http://pixelcog.com/blog/2014/virtualizing-aws-opsworks-with-vagrant/
