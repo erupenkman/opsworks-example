@@ -10,7 +10,9 @@
     "recipe[mysql::client]",
     "recipe[opsworks_ganglia::client]",
     "recipe[opsworks_ganglia::configure-client]",
-    "recipe[opsworks-example-project]"
+    "recipe[opsworks_nodejs::default]",
+    "recipe[opsworks-example-project]",
+    "recipe[deploy::nodejs]"
   ],
   "chef_type": "role",
   "json_class": "Chef::Role"
