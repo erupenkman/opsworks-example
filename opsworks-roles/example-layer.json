@@ -12,7 +12,8 @@
     "recipe[opsworks_ganglia::configure-client]",
     "recipe[opsworks_nodejs::default]",
     "recipe[opsworks-example-project]",
-    "recipe[deploy::nodejs]"
+    "recipe[deploy::nodejs]",
+    "recipe[opsworks-example-project::mongo]"
   ],
   "chef_type": "role",
   "json_class": "Chef::Role"
