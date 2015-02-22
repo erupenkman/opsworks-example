@@ -12,10 +12,7 @@ then
    aws opsworks --region us-east-1 create-deployment --stack-id $stackId --command "{\"Name\":\"setup\"}"
 elif [ "$1" = "deploy" ]
 then
-
    aws opsworks --region us-east-1 create-deployment --app-id $appId --stack-id $stackId --command "{\"Name\":\"deploy\"}"
-
-
 else
    echo "unknown command \"$1\" "
 fi
