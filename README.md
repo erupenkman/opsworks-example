@@ -1,9 +1,9 @@
 #Test your chef recipies before deploying them to opsworks
 
-So you want to use chef to provision aws opsworks like a boss? well first you'll need to test them locally. This project is an example that provisions a Vagrant VM with the default opsworks recipes and a starting point to build your own.
+So you want to create chef recipes that provision aws opsworks? well first you'll need to test them locally. This project is an example that provisions a Vagrant VM with the default opsworks recipes and a starting point to build and test your own.
 
 #installation
-install Vagrant, Virtualbox, Vagrant-Berkshelf plugin. after installing I got
+install Vagrant, Virtualbox, Vagrant-Berkshelf plugin. After installing I got:
 
     
     Vagrant -v
@@ -17,7 +17,7 @@ install Vagrant, Virtualbox, Vagrant-Berkshelf plugin. after installing I got
     ruby 2.0.0p481 (2014-05-08 revision 45883) [universal.x86_64-darwin14]
 
 This depends on the box file from this project https://github.com/wwestenbrink/vagrant-opsworks
-clone vagrant-opsworks seprately, it's dependencies and build the box file, I used commit `da9f341197`
+clone vagrant-opsworks seprately, it's dependencies and build the box file, I tested with commit `da9f341197`
 
 once finished you shouuld get this:
 

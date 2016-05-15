@@ -13,6 +13,9 @@ then
 elif [ "$1" = "deploy" ]
 then
    aws opsworks --region us-east-1 create-deployment --app-id $appId --stack-id $stackId --command "{\"Name\":\"deploy\"}"
+elif [ "$1" = "update_custom_cookbooks" ]
+then
+   aws opsworks --region us-east-1 create-deployment --app-id $appId --stack-id $stackId --command "{\"Name\":\"update_custom_cookbooks\"}"
 else
    echo "unknown command \"$1\" "
 fi
